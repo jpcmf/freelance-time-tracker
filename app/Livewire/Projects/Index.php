@@ -8,6 +8,8 @@ use Livewire\Component;
 
 class Index extends Component
 {
+    public bool $modal = false;
+
     public function render()
     {
         return view('livewire.projects.index');
