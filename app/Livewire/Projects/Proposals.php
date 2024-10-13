@@ -10,7 +10,7 @@ class Proposals extends Component
 {
     public Project $project;
 
-    public int $qty = 10;
+    public int $qty = 5;
 
     #[Computed()]
     public function proposals()
@@ -21,9 +21,15 @@ class Proposals extends Component
         // ->cursorPaginate($this->qty);
     }
 
+    #[Computed()]
+    public function lastProposalTime()
+    {
+        return $this->project->proposals()->latest()->first()->created_at->diffForHumans();
+    }
+
     public function loadMore()
     {
-        $this->qty += 10;
+        $this->qty += 5;
     }
 
     public function render()
