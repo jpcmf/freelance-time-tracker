@@ -51,13 +51,19 @@
                 <label for="agree"
                     class="flex cursor-pointer items-center gap-2 text-sm font-medium text-neutral-600 dark:text-neutral-300 [&:has(input:checked)]:text-neutral-900 dark:[&:has(input:checked)]:text-white [&:has(input:disabled)]:opacity-75 [&:has(input:disabled)]:cursor-not-allowed">
                     <div class="relative flex items-center">
-                        <input id="agree" type="checkbox"
+                        <input wire:model="agree" id="agree" type="checkbox"
                             class="before:content[''] peer relative size-4 cursor-pointer appearance-none overflow-hidden rounded border border-neutral-300 bg-neutral-50 before:absolute before:inset-0 checked:border-[#5354FD] checked:before:bg-[#5354FD] focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-neutral-800 checked:focus:outline-[#5354FD] active:outline-offset-0 disabled:cursor-not-allowed dark:border-neutral-700 dark:bg-neutral-900 dark:checked:border-[#5354FD] dark:checked:before:bg-[#5354FD] dark:focus:outline-neutral-300 dark:checked:focus:outline-[#5354FD]" />
                         <x-ui.icons.check
                             class="pointer-events-none invisible absolute left-1/2 top-1/2 size-3 -translate-x-1/2 -translate-y-1/2 text-white peer-checked:visible dark:text-white" />
                     </div>
                     <span class="text-[#8C8C9A] text-[14px]">Concordo com os Termos e Políticas de privacidade.</span>
                 </label>
+
+                @error('agree')
+                <div class="text-red-500 text-xs">
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
             <button
                 class="bg-[#5354FD] text-white font-bold tracking-wide uppercase px-8 py-3 rounded-[4px]
