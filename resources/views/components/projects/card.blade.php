@@ -17,16 +17,7 @@
         </div>
         <div>
             <livewire:proposals.create :project="$project" />
-
-            <div class="flex items-center justify-between mt-4 text-[14px]">
-                <div class="text-[#8C8C9A]  leading-6">Encerra em:</div>
-                <div class="font-bold flex items-center space-x-1">
-                    <span class="text-white ">01</span><span>:</span>
-                    <span class="text-white ">12</span><span>:</span>
-                    <span class="text-white ">26</span><span>:</span>
-                    <span class="text-white ">64</span>
-                </div>
-            </div>
+            <livewire:projects.timer :project="$project" />
         </div>
     </div>
 

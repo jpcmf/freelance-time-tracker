@@ -10,7 +10,7 @@ class Create extends Component
 {
     public Project $project;
 
-    public bool $modal = true;
+    public bool $modal = false;
 
     #[Rule(['required', 'email'])]
     public string $email = '';
@@ -18,7 +18,6 @@ class Create extends Component
     #[Rule(['required', 'numeric', 'gt:0'])]
     public int $hours = 0;
 
-    #[Rule(['required'])]
     public bool $agree = false;
 
     public function save()
