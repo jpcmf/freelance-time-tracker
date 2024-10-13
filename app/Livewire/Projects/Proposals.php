@@ -16,7 +16,7 @@ class Proposals extends Component
     public function proposals()
     {
         return $this->project->proposals()
-            ->orderByDesc('hours')
+            ->orderBy('hours')
             ->paginate($this->qty);
         // ->cursorPaginate($this->qty);
     }
